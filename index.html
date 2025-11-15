@@ -1,0 +1,450 @@
+    <!DOCTYPE html>
+        <html lang="id">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Pinzgraphichs Store</title>
+            <link rel="stylesheet" href="style.css">
+            <!-- Tambahkan di dalam <head> -->
+            <script src="https://accounts.google.com/gsi/client" async defer></script>
+            <style>
+                .navbar {
+                    padding: 10px 20px;
+                }
+                .navbar-top {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                }
+                .navbar-bottom {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    margin-top: 10px;
+                }
+                .navbar-bottom .logo {
+                    font-size: 1.8em;
+                    font-weight: bold;
+                    margin-bottom: 25px; /* Jarak dari teks ke tombol */
+                    text-align: center;
+                    position: relative;
+                    top: -20px; /* Sedikit ke atas */
+                }
+                .navbar-bottom .nav-links {
+                    display: flex;
+                    justify-content: center;
+                    gap: 25px; /* Jarak antar tombol */
+                    margin-bottom: 20px; /* Jarak dari tombol ke search bar */
+                    position: relative;
+                    top: -15px; /* Sedikit ke atas */
+                }
+                .navbar-bottom .search-container {
+                    display: flex;
+                    justify-content: center;
+                }
+                #profile-section {
+                    /* display is controlled by JS */
+                    align-items: center;
+                    gap: 15px; /* Space between pic and button */
+                }
+
+                #profile-pic {
+                    width: 50px; /* Increase size */
+                    height: 50px;
+                    border-radius: 50%; /* Make it circular */
+                    border: 2px solid #eee; /* Optional: add a border */
+                }
+
+                #logout-button {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    padding: 10px 15px; /* Increase padding */
+                    font-size: 1em; /* Increase font size */
+                    background-color: #f44336; /* Red color for logout */
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                }
+
+                #logout-button:hover {
+                    background-color: #d32f2f;
+                }
+
+                #logout-button svg {
+                    width: 24px; /* Adjust icon size */
+                    height: 24px;
+                    fill: white;
+                }
+            </style>
+        </head>
+        <body>
+
+            <header class="main-header">
+                <nav class="navbar">
+                    <div class="navbar-top">
+                        <img src="images/GFX DESAIN/FY14.png" alt="Pinzgraphichs Logo" class="navbar-logo">
+                        <div id="profile-section">
+                            <button id="logout-button">
+                                <svg viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"></path></svg>
+                                <span>Logout</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="navbar-bottom">
+                        <div class="logo">
+                            halo selamat datang di website Pinzgraphichs store
+                        </div>
+                        <div class="nav-links">
+                            <a href="index.html" class="nav-button">Produk Kami</a>
+                            <a href="kontak.html" class="nav-button">Kontak Kami</a>
+                            <a href="tentangkami.html" class="nav-button">Tentang Kami</a>
+                            <a href="faq.html" class="nav-button">FAQ</a>
+                            <a href="login.html" class="nav-button" id="login-nav-link">Login</a>
+                        </div>
+                        <div class="search-container">
+                            <input type="text" id="searchInput" placeholder="Cari produk...">
+                            <button type="button" id="searchButton">Search</button>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+                <section class="hero-slider-section">
+        <div class="slider-container">
+            <div class="slider-track">
+                <div class="slide">
+                    <video controls autoplay muted loop>
+                        <source src="images/VIDEO/THUMBNAIL YOUTUBE.mp4" type="video/mp4">
+                        Browser anda tidak mendukung video.
+                    </video>
+                </div>
+            </div>
+            <div class="promo-text-container">
+                <p class="promo-text">Temukan beberapa produk kami, semoga anda merasa puas dengan layanan kami.</p>
+            </div>
+        </div>
+    </section>
+
+            <main>
+                <section class="welcome-text">
+                    <p>halo selamat datang di website kami, cari produk yang anda inginkan disini</p>
+                </section>
+
+                <section class="recommendation">
+                    <h2 class="section-title animated-title"><span>Rekomendasi Produk</span></h2>
+                    <div class="product-grid">
+                        <!-- Baris 1 -->
+                        <div class="card" data-title="Thumbnail Game Roblox">
+                            <img src="images/GFX DESAIN/THUMBNAIL ROBLOX.jpg" alt="Produk 1">
+                            <div class="card-description">
+                                <p>Thumbnail Game Roblox</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Poster Final UCL 2025">
+                            <img src="images/GFX DESAIN/FINAL UCL.jpg" alt="Produk 2">
+                            <div class="card-description">
+                                <p>Poster Final UCL 2025</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Poster pemain Timnas Indonesia">
+                            <img src="images/GFX DESAIN/OLE ROMENY POSTER.jpg" alt="Produk 3">
+                            <div class="card-description">
+                                <p>Poster pemain Timnas Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Poster Round 4 Piala Dunia 2026 Round 4">
+                            <img src="images/GFX DESAIN/ROUND 4.jpg" alt="Produk 4">
+                            <div class="card-description">
+                                <p>Poster Round 4 Piala Dunia 2026 Round 4</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Poster spesial Hari Ibu">
+                            <img src="images/(CC) DESIGN FEEDS INSTAGRAM/hari ibu.png" alt="Produk 5">
+                            <div class="card-description">
+                                <p>Poster spesial Hari Ibu</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="youtube-thumbnail-section">
+                    <h2 class="section-title-hover">Thumbnail Youtube</h2>
+                    <div class="product-grid">
+                        <div class="card card-thumbnail" data-title="Desain Thumbnail Youtube LDKS 2024">
+                            <img src="images/(CC) DESIGN THUMBNAIL YT/ldks.png" alt="Thumbnail 1">
+                            <div class="card-description">
+                                <p>Desain Thumbnail Youtube LDKS 2024</p>
+                            </div>
+                        </div>
+                        <div class="card card-thumbnail" data-title="Desain Thumbnail Youtube SPMB 2025">
+                            <img src="images/(CC) DESIGN THUMBNAIL YT/spm 2025.png" alt="Thumbnail 2">
+                            <div class="card-description">
+                                <p>Desain Thumbnail Youtube SPMB 2025</p>
+                            </div>
+                        </div>
+                        <div class="card card-thumbnail" data-title="Desain Kegiatan EXPO Gelar Karya SMKN 2 Surakarta 2025">
+                            <img src="images/(CC) DESIGN THUMBNAIL YT/thumbnail gelar karya.png" alt="Thumbnail 3">
+                            <div class="card-description">
+                                <p>Desain Kegiatan EXPO Gelar Karya SMKN 2 Surakarta 2025</p>
+                            </div>
+                        </div>
+                        <div class="card card-thumbnail" data-title="Desain Thumbnail Kegiatan TEFA SMKN 1 Nogosari">
+                            <img src="images/(CC) DESIGN THUMBNAIL YT/fea smkn 1 nogosari.png" alt="Thumbnail 4">
+                            <div class="card-description">
+                                <p>Desain Thumbnail Kegiatan TEFA SMKN 1 Nogosari</p>
+                            </div>
+                        </div>
+                        <div class="card card-thumbnail" data-title="Desain Thumbnail TEFA SMK BK Surakarta">
+                            <img src="images/(CC) DESIGN THUMBNAIL YT/tefa smk bk.png" alt="Thumbnail 5">
+                            <div class="card-description">
+                                <p>Desain Thumbnail TEFA SMK BK Surakarta</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        
+
+
+                <section class="football-design-section">
+                    <h2 class="section-title-hover">Football Design</h2>
+                    <div class="product-grid">
+                        <div class="card" data-title="Desain Final UCL 2025">
+                            <img src="images/GFX DESAIN/FINAL UCL.jpg" alt="Football Design 1">
+                            <div class="card-description">
+                                <p>Desain Final UCL 2025</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Desain poster piala Presiden 2025">
+                            <img src="images/GFX DESAIN/PIALA PRESIDEN.jpg" alt="Football Design 2">
+                            <div class="card-description">
+                                <p>Desain poster piala Presiden 2025</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Desain Carabao Cup Man.United vs Leicester">
+                            <img src="images/GFX DESAIN/EMYU VS LEICESTER.jpg" alt="Football Design 3">
+                            <div class="card-description">
+                                <p>Desain Carabao Cup Man.United vs Leicester</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Desain Final Uefa Conference League 2025">
+                            <img src="images/GFX DESAIN/FINAL UECL.jpg" alt="Football Design 4">
+                            <div class="card-description">
+                                <p>Desain Final Uefa Conference League 2025</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Desain Final Uefa Europa League 2025">
+                            <img src="images/GFX DESAIN/FINAL UEL.jpg" alt="Football Design 5">
+                            <div class="card-description">
+                                <p>Desain Final Uefa Europa League 2025</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Desain Timnas Indonesia Vs Australia">
+                            <img src="images/GFX DESAIN/TIMNAS VS AUSTRALIA.jpg" alt="Football Design 6">
+                            <div class="card-description">
+                                <p>Desain Timnas Indonesia Vs Australia</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Poster pemain timnas Indonesia">
+                            <img src="images/GFX DESAIN/OLE ROMENY POSTER.jpg" alt="Football Design 7">
+                            <div class="card-description">
+                                <p>Poster pemain timnas Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Desain poster Man.United vs Arsenal">
+                            <img src="images/GFX DESAIN/WhatsApp Image 2025-09-04 at 12.41.51_a96e5e95.jpg" alt="Football Design 8">
+                            <div class="card-description">
+                                <p>Desain poster Man.United vs Arsenal</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Desain Poster Final Club World Cup 2025">
+                            <img src="images/GFX DESAIN/final club world cup.jpg" alt="Football Design 9">
+                            <div class="card-description">
+                                <p>Desain Poster Final Club World Cup 2025</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Desain Quarter Finals Champhions League 2025">
+                            <img src="images/GFX DESAIN/desian quarter finals champhions league 2025.jpg" alt="Football Design 10">
+                            <div class="card-description">
+                                <p>Desain Quarter Finals Champhions League 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+                    <!-- Desain Feed Ig -->
+                <section class="feed-ig-design">
+                    <h2 class="section-title-hover">FEED IG DESIGN</h2>
+                    <div class="product-grid">
+                        <div class="card" data-title="Desain Spesial Hari Ayah 2025">
+                            <img src="images/(CC) DESIGN FEEDS INSTAGRAM/hari ayah.png" alt="Football Design 1">
+                            <div class="card-description">
+                                <p>Desain Spesial Hari Ayah 2025</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Desain Spesial Bela Negara 2025">
+                            <img src="images/(CC) DESIGN FEEDS INSTAGRAM/desin bela negara.png" alt="Football Design 2">
+                            <div class="card-description">
+                                <p>Desain Spesial Bela Negara 2025</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Desain Spesial Hari Guru">
+                            <img src="images/(CC) DESIGN FEEDS INSTAGRAM/hari guru.png" alt="Football Design 3">
+                            <div class="card-description">
+                                <p>Desain Spesial Hari Guru</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Desain Spesial Hari Ibu">
+                            <img src="images/(CC) DESIGN FEEDS INSTAGRAM/hari ibu.png" alt="Football Design 4">
+                            <div class="card-description">
+                                <p>Desain Spesial Hari Ibu</p>
+                            </div>
+                        </div>
+                        <div class="card" data-title="Desain Ucapan Bulan Ramadhan 2025">
+                            <img src="images/(CC) DESIGN FEEDS INSTAGRAM/poster ramadhan.png" alt="Football Design 5">
+                            <div class="card-description">
+                                <p>Desain Ucapan Bulan Ramadhan 2025</p>
+                            </div>
+                            </div>
+            </main>
+
+            <footer class="main-footer-credit">
+                <p>dibuat oleh pihak admin pinzgraphichs store copyright@2025</p>
+            </footer>
+
+            <script>
+                // Slider script (existing)
+                const track = document.querySelector('.slider-track');
+                if (track) {
+                    const slides = Array.from(track.children);
+                    const nextButton = document.querySelector('.next-btn');
+                    const prevButton = document.querySelector('.prev-btn');
+                    
+                    if (slides.length > 0) {
+                        const slideWidth = slides[0].getBoundingClientRect().width;
+                        let currentIndex = 0;
+
+                        const setSlidePosition = (slide, index) => {
+                            slide.style.left = slideWidth * index + 'px';
+                        };
+                        slides.forEach(setSlidePosition);
+
+                        const moveToSlide = (track, currentSlide, targetSlide) => {
+                            track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+                            currentSlide.classList.remove('current-slide');
+                            targetSlide.classList.add('current-slide');
+                        }
+
+                        if (nextButton && prevButton) {
+                            const updateButtons = (targetIndex) => {
+                                if (targetIndex === 0) {
+                                    prevButton.classList.add('is-hidden');
+                                    nextButton.classList.remove('is-hidden');
+                                } else if (targetIndex === slides.length - 1) {
+                                    prevButton.classList.remove('is-hidden');
+                                    nextButton.classList.add('is-hidden');
+                                } else {
+                                    prevButton.classList.remove('is-hidden');
+                                    nextButton.classList.remove('is-hidden');
+                                }
+                            }
+
+                            nextButton.addEventListener('click', e => {
+                                const currentSlide = track.querySelector('.current-slide') || slides[0];
+                                let nextIndex = (slides.indexOf(currentSlide) + 1) % slides.length;
+                                track.style.transform = 'translateX(-' + (nextIndex * 100) + '%)';
+                                currentIndex = nextIndex;
+                            });
+
+                            prevButton.addEventListener('click', e => {
+                                let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+                                track.style.transform = 'translateX(-' + (prevIndex * 100) + '%)';
+                                currentIndex = prevIndex;
+                            });
+
+                            setInterval(() => {
+                                nextButton.click();
+                            }, 5000);
+                        }
+                    }
+                }
+
+                // Search and Login Status functionality
+                document.addEventListener('DOMContentLoaded', () => {
+                    const loginNavLink = document.getElementById('login-nav-link');
+                    const profileSection = document.getElementById('profile-section');
+                    const logoutButton = document.getElementById('logout-button');
+
+                    // Check login status
+                    if (localStorage.getItem('isLoggedIn') === 'true') {
+                        // User is logged in
+                        if (loginNavLink) {
+                            loginNavLink.style.display = 'none';
+                        }
+                        profileSection.style.display = 'flex';
+                        
+                        // Logout button functionality
+                        logoutButton.addEventListener('click', () => {
+                            if (confirm('apakah anda yakin ingin keluar dari sini?')) {
+                                localStorage.removeItem('isLoggedIn');
+                                localStorage.removeItem('userProfilePic');
+                                window.location.href = 'login.html';
+                            }
+                        });
+
+                    } else {
+                        // User is not logged in
+                        profileSection.style.display = 'none';
+                        if (loginNavLink) {
+                            loginNavLink.style.display = 'block';
+                        }
+                    }
+
+                    // Search functionality
+                    const searchInput = document.getElementById('searchInput');
+                    const productCards = document.querySelectorAll('main .card');
+
+                    function filterProducts() {
+                        const searchTerm = searchInput.value.toLowerCase();
+
+                        productCards.forEach(card => {
+                            const title = card.dataset.title.toLowerCase();
+                            if (title.includes(searchTerm)) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                    }
+
+                    searchInput.addEventListener('input', filterProducts);
+
+                    // Add to Cart button functionality
+                    const whatsappLink = 'https://wa.me/6289510313005';
+                    productCards.forEach(card => {
+                        const cardDescription = card.querySelector('.card-description');
+                        if (cardDescription) {
+                            const productName = card.dataset.title;
+                            const message = `Halo, saya tertarik dengan produk ${productName}.`;
+                            const encodedMessage = encodeURIComponent(message);
+
+                            const button = document.createElement('a');
+                            button.href = `${whatsappLink}?text=${encodedMessage}`;
+                            button.target = '_blank';
+                            button.className = 'add-to-cart-btn';
+                            button.textContent = 'Add to Cart';
+                            
+                            cardDescription.parentNode.insertBefore(button, cardDescription.nextSibling);
+                        }
+                    });
+                });
+            </script>
+
+        </body>
+        </html>

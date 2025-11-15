@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+        <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinzgraphichs Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tentangkami.css">
+    <style>
+        .navbar {
+            padding: 10px 20px;
+        }
+        .navbar-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .navbar-bottom {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .navbar-bottom .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 25px; /* Jarak dari teks ke tombol */
+            text-align: center;
+            position: relative;
+            top: -20px; /* Sedikit ke atas */
+        }
+        .navbar-bottom .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px; /* Jarak antar tombol */
+            margin-bottom: 20px; /* Jarak dari tombol ke search bar */
+            position: relative;
+            top: -15px; /* Sedikit ke atas */
+        }
+        .navbar-bottom .search-container {
+            display: flex;
+            justify-content: center;
+        }
+        #profile-section {
+            /* display is controlled by JS */
+            align-items: center;
+            gap: 15px; /* Space between pic and button */
+        }
+
+        #profile-pic {
+            width: 50px; /* Increase size */
+            height: 50px;
+            border-radius: 50%; /* Make it circular */
+            border: 2px solid #eee; /* Optional: add a border */
+        }
+
+        #logout-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px; /* Increase padding */
+            font-size: 1em; /* Increase font size */
+            background-color: #f44336; /* Red color for logout */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #logout-button:hover {
+            background-color: #d32f2f;
+        }
+
+        #logout-button svg {
+            width: 24px; /* Adjust icon size */
+            height: 24px;
+            fill: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+                <nav class="navbar">
+                    <div class="navbar-top">
+                        <img src="images/GFX DESAIN/FY14.png" alt="Pinzgraphichs Logo" class="navbar-logo">
+                        <div id="profile-section">
+                            <button id="logout-button">
+                                <svg viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"></path></svg>
+                                <span>Logout</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="navbar-bottom">
+                        <div class="logo">
+                            halo selamat datang di website Pinzgraphichs store
+                        </div>
+                        <div class="nav-links">
+                            <a href="index.html" class="nav-button">Produk Kami</a>
+                            <a href="kontak.html" class="nav-button">Kontak Kami</a>
+                            <a href="tentangkami.html" class="nav-button">Tentang Kami</a>
+                            <a href="faq.html" class="nav-button">FAQ</a>
+                            <a href="login.html" class="nav-button" id="login-nav-link">Login</a>
+                        </div>
+                        <div class="search-container">
+                            <input type="text" id="searchInput" placeholder="Cari produk...">
+                            <button type="button" id="searchButton">Search</button>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+    <main class="about-section">
+        <h1 class="about-title">Awal Mula Berdirinya Pinzgraphichs Store</h1>
+        <div class="about-content-wrapper">
+            <div class="about-text">
+                <p>
+                    Selamat datang di halaman tentang kami. Pinzgraphichs Store dimulai dari sebuah ide sederhana untuk menyediakan layanan desain grafis yang berkualitas dengan harga yang terjangkau. Kami percaya bahwa setiap orang berhak mendapatkan desain yang menarik tanpa harus mengeluarkan biaya yang besar.
+                </p>
+                <p>
+                    Dengan semangat dan dedikasi, kami terus berkembang dan berinovasi untuk memenuhi kebutuhan para pelanggan kami. Visi kami adalah menjadi mitra desain terpercaya bagi para pelaku usaha, kreator konten, dan siapa saja yang membutuhkan sentuhan visual yang profesional.
+                </p>
+            </div>
+            <div class="about-image-container">
+                <div class="image-frame">
+                    <img src="images/TENTANG KAMI/1.jpg" alt="Tim Pinzgraphichs">
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <main class="about-section">
+        <h1 class="about-title">Apa Saja Software yang digunakan</h1>
+        <div class="about-content-wrapper">
+            <div class="about-text">
+                <p>
+                    Pada proses pembuatan karya desain yang saya buat saya memiliki beberapa software yang biasa saya pakai
+                </p>
+                <p>
+                    Yaitu meliputi Adobe Photoshoop, Adobe Ilustrator, Snapseed, Canva, Adobe Lightroom, dan Pixellab
+                </p>
+            </div>
+            <div class="software-logos-container">
+                <div class="software-logo">
+                    <img src="images/SOFTWARE LOGO/PHOTOSHOP.png" alt="Adobe Photoshop">
+                </div>
+                <div class="software-logo">
+                    <img src="images/SOFTWARE LOGO/ILLUSTRATOR.png" alt="Adobe Illustrator">
+                </div>
+                <div class="software-logo">
+                    <img src="images/SOFTWARE LOGO/LIGHTROOM.png" alt="Adobe Lightroom">
+                </div>
+                <div class="software-logo">
+                    <img src="images/SOFTWARE LOGO/CANVA.png" alt="Canva">
+                </div>
+                <div class="software-logo">
+                    <img src="images/SOFTWARE LOGO/PIXELLAB.png" alt="Pixellab">
+                </div>
+                <div class="software-logo">
+                    <img src="images/SOFTWARE LOGO/SNAPSEED.png" alt="Snapseed">
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <main class="about-section">
+        <h1 class="about-title">Menjalin Mitra Usaha </h1> 
+        <div class="about-content-wrapper">
+            <div class="about-text">
+                <p>
+                    Supaya Bidang Usaha yang dijalankan bisa dijangkau oleh banyak konsumen di berbagai sosial media 
+                </p>
+                <p>
+                    Kami  memutuskan untuk mnenjalin kerjasama dan kolaborator disaat kita membuat postingan di sosial media,agar apa yang kita posting bisa banyak dilihat oleh banyak orang dan bisa memicu transaksi jual beli dengan para konsumen,seperti disini saya menjalin kerjasama dengan akun Factgoal.id dimana kebetulan admin nya adalah saya sendiri
+                </p>
+            </div>
+            <div class="about-image-container">
+                <div class="image-frame">
+                    <img src="images/TENTANG KAMI/MENJALIN.png" alt="Tim Pinzgraphichs">
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <main class="about-section">
+        <h1 class="about-title">List Jasa Produk </h1> 
+        <div class="about-content-wrapper">
+            <div class="about-text">
+                <p>
+                    Dalam mendirikan usaha ini kami menyediakan layanan pembuatan desain grafis secara bebas sesuai dengan kebutuhan konsumen 
+                </p>
+                <p>
+                    Namun biasanya produk kai cenderung pada Desain Thumbnail Youtube,Desain Feed Instagram, hingga Football Design
+                </p>
+            </div>
+            <div class="about-image-container">
+                <div class="image-frame">
+                    <img src="images/TENTANG KAMI/list produk.png" alt="Tim Pinzgraphichs">
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+    <main class="about-section">
+        <h1 class="about-title">Referensi</h1>
+        <div class="about-content-wrapper">
+            <div class="about-text">
+                <p>
+                    Dalam melakukan suatau pekerjaan desain,saya terkadang menggunakan mediasosial sebagai bahan untuk mencari sebuah referensi
+                </p>
+                <p>
+                    Namun dalam proses mencari referensi kita harus mengedepankan sebuah prinsip sebuah wirausahawan yaitu,harus menciptakan sebuah  produk yang orisinil dan merupakan karya murni diri sendiri,dengan cara inilah  kami dapat menerapkan konsep bisnis ini secara lebih baik
+                </p>
+            </div>
+            <div class="about-image-container">
+                <div class="image-frame">
+                    <img src="images/TENTANG KAMI/referensi.png" alt="Tim Pinzgraphichs">
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <footer class="main-footer-credit">
+        <p>dibuat oleh pihak admin pinzgraphichs store copyright@2025</p>
+    </footer>
+
+            <script>
+                // Slider script (existing)
+                const track = document.querySelector('.slider-track');
+                if (track) {
+                    const slides = Array.from(track.children);
+                    const nextButton = document.querySelector('.next-btn');
+                    const prevButton = document.querySelector('.prev-btn');
+                    
+                    if (slides.length > 0) {
+                        const slideWidth = slides[0].getBoundingClientRect().width;
+                        let currentIndex = 0;
+
+                        const setSlidePosition = (slide, index) => {
+                            slide.style.left = slideWidth * index + 'px';
+                        };
+                        slides.forEach(setSlidePosition);
+
+                        const moveToSlide = (track, currentSlide, targetSlide) => {
+                            track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+                            currentSlide.classList.remove('current-slide');
+                            targetSlide.classList.add('current-slide');
+                        }
+
+                        if (nextButton && prevButton) {
+                            const updateButtons = (targetIndex) => {
+                                if (targetIndex === 0) {
+                                    prevButton.classList.add('is-hidden');
+                                    nextButton.classList.remove('is-hidden');
+                                } else if (targetIndex === slides.length - 1) {
+                                    prevButton.classList.remove('is-hidden');
+                                    nextButton.classList.add('is-hidden');
+                                } else {
+                                    prevButton.classList.remove('is-hidden');
+                                    nextButton.classList.remove('is-hidden');
+                                }
+                            }
+
+                            nextButton.addEventListener('click', e => {
+                                const currentSlide = track.querySelector('.current-slide') || slides[0];
+                                let nextIndex = (slides.indexOf(currentSlide) + 1) % slides.length;
+                                track.style.transform = 'translateX(-' + (nextIndex * 100) + '%)';
+                                currentIndex = nextIndex;
+                            });
+
+                            prevButton.addEventListener('click', e => {
+                                let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+                                track.style.transform = 'translateX(-' + (prevIndex * 100) + '%)';
+                                currentIndex = prevIndex;
+                            });
+
+                            setInterval(() => {
+                                nextButton.click();
+                            }, 5000);
+                        }
+                    }
+                }
+
+                // Search and Login Status functionality
+                document.addEventListener('DOMContentLoaded', () => {
+                    const loginNavLink = document.getElementById('login-nav-link');
+                    const profileSection = document.getElementById('profile-section');
+                    const logoutButton = document.getElementById('logout-button');
+
+                    // Check login status
+                    if (localStorage.getItem('isLoggedIn') === 'true') {
+                        // User is logged in
+                        if (loginNavLink) {
+                            loginNavLink.style.display = 'none';
+                        }
+                        profileSection.style.display = 'flex';
+                        
+                        // Logout button functionality
+                        logoutButton.addEventListener('click', () => {
+                            if (confirm('apakah anda yakin ingin keluar dari sini?')) {
+                                localStorage.removeItem('isLoggedIn');
+                                localStorage.removeItem('userProfilePic');
+                                window.location.href = 'login.html';
+                            }
+                        });
+
+                    } else {
+                        // User is not logged in
+                        profileSection.style.display = 'none';
+                        if (loginNavLink) {
+                            loginNavLink.style.display = 'block';
+                        }
+                    }
+
+                    // Search functionality
+                    const searchInput = document.getElementById('searchInput');
+                    const productCards = document.querySelectorAll('main .card');
+
+                    function filterProducts() {
+                        const searchTerm = searchInput.value.toLowerCase();
+
+                        productCards.forEach(card => {
+                            const title = card.dataset.title.toLowerCase();
+                            if (title.includes(searchTerm)) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                    }
+
+                    searchInput.addEventListener('input', filterProducts);
+
+                    // Add to Cart button functionality
+                    const whatsappLink = 'https://wa.me/6289510313005';
+                    productCards.forEach(card => {
+                        const cardDescription = card.querySelector('.card-description');
+                        if (cardDescription) {
+                            const productName = card.dataset.title;
+                            const message = `Halo, saya tertarik dengan produk ${productName}.`;
+                            const encodedMessage = encodeURIComponent(message);
+
+                            const button = document.createElement('a');
+                            button.href = `${whatsappLink}?text=${encodedMessage}`;
+                            button.target = '_blank';
+                            button.className = 'add-to-cart-btn';
+                            button.textContent = 'Add to Cart';
+                            
+                            cardDescription.parentNode.insertBefore(button, cardDescription.nextSibling);
+                        }
+                    });
+                });
+            </script>
+
+</body>
+</html>

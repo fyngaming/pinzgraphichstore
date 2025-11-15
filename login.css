@@ -1,0 +1,174 @@
+/* General Body Styling to Match Theme */
+body.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden; /* Prevent scrollbars from appearing */
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7; /* Set opacity to 70% */
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: relative; /* Ensure it's on top of the video */
+    z-index: 1;
+}
+
+.login-form {
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+    backdrop-filter: blur(10px); /* Apply a blur effect */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-logo {
+    width: 150px; /* Ukuran logo disesuaikan */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.login-intro-text {
+    color: #ffffff;
+    font-size: 1em;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box; /* Important for padding and width calculation */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #2a9df4; /* Blue color from main theme */
+    box-shadow: 0 0 8px rgba(42, 157, 244, 0.3);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2a9df4; /* Main blue theme color */
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #1e78b3; /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+.social-login-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 30px 0;
+    color: #ffffff;
+}
+
+.social-login-divider::before, .social-login-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.social-login-divider span {
+    padding: 0 15px;
+}
+
+.social-login-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-social img {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+}
+
+/* Facebook Button */
+.btn-social.facebook {
+    background-color: #1877F2;
+    color: white;
+    border-color: #1877F2;
+}
+
+.btn-social.facebook:hover {
+    background-color: #166fe5;
+}
+
+/* Google Button */
+.btn-social.google {
+    background-color: #ffffff;
+    color: #444;
+}
+
+.btn-social.google:hover {
+    background-color: #f8f8f8;
+    border-color: #ccc;
+}

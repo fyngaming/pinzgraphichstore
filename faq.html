@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Pinzgraphichs Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="faq.css">
+    <style>
+        .navbar-bottom .logo {
+            margin-bottom: 15px;
+            top: -10px;
+        }
+        #profile-section {
+            /* display is controlled by JS */
+            align-items: center;
+            gap: 15px; /* Space between pic and button */
+        }
+
+        #profile-pic {
+            width: 50px; /* Increase size */
+            height: 50px;
+            border-radius: 50%; /* Make it circular */
+            border: 2px solid #eee; /* Optional: add a border */
+        }
+
+        #logout-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px; /* Increase padding */
+            font-size: 1em; /* Increase font size */
+            background-color: #f44336; /* Red color for logout */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #logout-button:hover {
+            background-color: #d32f2f;
+        }
+
+        #logout-button svg {
+            width: 24px; /* Adjust icon size */
+            height: 24px;
+            fill: white;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="navbar-top">
+                <img src="images/GFX DESAIN/FY14.png" alt="Pinzgraphichs Logo" class="navbar-logo">
+                <div id="profile-section" style="display: none;">
+                    <button id="logout-button">
+                        <svg viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"></path></svg>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </div>
+            <div class="navbar-bottom">
+                <div class="logo">
+                    Selamat Datang di website Pinzgraphichs Store  
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-button">Produk Kami</a>
+                    <a href="kontak.html" class="nav-button">Kontak Kami</a>
+                    <a href="tentangkami.html" class="nav-button">Tentang Kami</a>
+                    <a href="faq.html" class="nav-button">FAQ</a>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Cari pertanyaan...">
+                    <button type="button" id="searchButton">Search</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <h4>Bagaimana cara memesan produk?</h4>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Anda dapat memesan produk dengan menghubungi kami melalui WhatsApp atau email yang tertera di halaman Kontak Kami. Jelaskan produk yang Anda inginkan dan kami akan segera merespons.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h4>Berapa lama proses pengerjaan desain?</h4>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Lama pengerjaan tergantung pada tingkat kerumitan desain. Rata-rata, pengerjaan memakan waktu 2-5 hari kerja. Kami akan memberikan estimasi waktu yang lebih akurat saat Anda melakukan pemesanan.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h4>Apakah saya bisa meminta revisi?</h4>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Tentu saja. Kami memberikan kesempatan untuk 2 kali revisi minor. Jika revisi yang diminta cukup besar, mungkin akan ada biaya tambahan.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h4>Metode pembayaran apa saja yang diterima?</h4>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Kami menerima pembayaran melalui transfer bank dan dompet digital (OVO, GoPay, Dana). Detail rekening akan kami berikan saat konfirmasi pemesanan.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer-credit">
+        <p>dibuat oleh pihak admin pinzgraphichs store copyright@2025</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const profileSection = document.getElementById('profile-section');
+            const logoutButton = document.getElementById('logout-button');
+
+            // Check login status
+            if (localStorage.getItem('isLoggedIn') === 'true') {
+                // User is logged in
+                profileSection.style.display = 'flex';
+                
+                // Logout button functionality
+                logoutButton.addEventListener('click', () => {
+                    if (confirm('apakah anda yakin ingin keluar dari sini?')) {
+                        localStorage.removeItem('isLoggedIn');
+                        localStorage.removeItem('userProfilePic');
+                        window.location.href = 'login.html';
+                    }
+                });
+
+            } else {
+                // User is not logged in
+                profileSection.style.display = 'none';
+            }
+        });
+
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const toggle = item.querySelector('.faq-toggle');
+
+            question.addEventListener('click', () => {
+                const isOpen = answer.style.display === 'block';
+                answer.style.display = isOpen ? 'none' : 'block';
+                toggle.textContent = isOpen ? '+' : '-';
+            });
+        });
+
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            faqItems.forEach(item => {
+                const questionText = item.querySelector('.faq-question h4').textContent.toLowerCase();
+                const answerText = item.querySelector('.faq-answer p').textContent.toLowerCase();
+                if (questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
