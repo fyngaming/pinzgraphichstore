@@ -22,37 +22,11 @@
                     flex-direction: column;
                     align-items: center;
                     width: 100%;
-                    margin-top: 10px;
-                }
-                .navbar-bottom .logo {
-                    font-size: 2em;
-                    font-weight: bold;
-                    margin-bottom: 15px;
-                    margin-top: -15px; /* Menaikkan posisi teks */
-                    text-align: center;
-                }
-                .navbar-bottom .nav-links {
-                    display: flex;
-                    justify-content: center;
-                    gap: 25px; /* Jarak antar tombol */
-                    margin-bottom: 15px; /* Jarak dari tombol ke search bar */
+                    padding: 10px;
                 }
                 .navbar-bottom .search-container {
                     display: flex;
                     justify-content: center;
-                    margin-bottom: 10px;
-                }
-                #profile-section {
-                    /* display is controlled by JS */
-                    align-items: center;
-                    gap: 15px; /* Space between pic and button */
-                }
-
-                #profile-pic {
-                    width: 50px; /* Increase size */
-                    height: 50px;
-                    border-radius: 50%; /* Make it circular */
-                    border: 2px solid #eee; /* Optional: add a border */
                 }
 
                 #logout-button {
@@ -78,6 +52,71 @@
                     height: 24px;
                     fill: white;
                 }
+
+                /* Settings Button */
+                #settings-button {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    padding: 10px;
+                }
+
+                #settings-button svg {
+                    width: 32px;
+                    height: 32px;
+                    fill: #333;
+                }
+
+                /* Dropdown Menu */
+                .dropdown-menu {
+                    display: none; /* Hidden by default */
+                    position: absolute;
+                    top: 60px; /* Position below the top navbar */
+                    right: 20px;
+                    background-color: white;
+                    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+                    border-radius: 5px;
+                    overflow: hidden;
+                    z-index: 1000;
+                }
+
+                .dropdown-menu a {
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                    text-align: left;
+                }
+
+                .dropdown-menu a:hover {
+                    background-color: #f1f1f1;
+                }
+
+                .welcome-header-text {
+                    text-align: center;
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                    color: white; /* Warna teks putih */
+                }
+
+                /* Style untuk search bar yang lebih kecil */
+                .search-container input[type="text"] {
+                    padding: 8px;
+                    font-size: 0.9em;
+                    border: 1px solid #ccc;
+                    border-radius: 4px 0 0 4px;
+                    max-width: 250px;
+                }
+                .search-container button {
+                    padding: 8px 12px;
+                    font-size: 0.9em;
+                    border: 1px solid #007bff;
+                    background-color: #007bff;
+                    color: white;
+                    border-radius: 0 4px 4px 0;
+                    cursor: pointer;
+                }
             </style>
         </head>
         <body>
@@ -86,23 +125,25 @@
                 <nav class="navbar">
                     <div class="navbar-top">
                         <img src="images/GFX DESAIN/FY14.png" alt="Pinzgraphichs Logo" class="navbar-logo">
-                        <div id="profile-section">
+                        <div id="profile-section" style="display: none; align-items: center; gap: 10px;">
+                            <button id="settings-button">
+                                <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+                            </button>
                             <button id="logout-button">
                                 <svg viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"></path></svg>
                                 <span>Logout</span>
                             </button>
                         </div>
                     </div>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="index.html">Produk Kami</a>
+                        <a href="kontak.html">Kontak Kami</a>
+                        <a href="tentangkami.html">Tentang Kami</a>
+                        <a href="faq.html">FAQ</a>
+                    </div>
                     <div class="navbar-bottom">
-                        <div class="logo">
-                            halo selamat datang di website Pinzgraphichs store
-                        </div>
-                        <div class="nav-links">
-                            <a href="index.html" class="nav-button">Produk Kami</a>
-                            <a href="kontak.html" class="nav-button">Kontak Kami</a>
-                            <a href="tentangkami.html" class="nav-button">Tentang Kami</a>
-                            <a href="faq.html" class="nav-button">FAQ</a>
-                            <a href="login.html" class="nav-button" id="login-nav-link">Login</a>
+                        <div class="welcome-header-text">
+                            selamat datang di website Pinzgrahichs Store
                         </div>
                         <div class="search-container">
                             <input type="text" id="searchInput" placeholder="Cari produk...">
@@ -375,16 +416,13 @@
 
                 // Search and Login Status functionality
                 document.addEventListener('DOMContentLoaded', () => {
-                    const loginNavLink = document.getElementById('login-nav-link');
                     const profileSection = document.getElementById('profile-section');
                     const logoutButton = document.getElementById('logout-button');
+                    const settingsButton = document.getElementById('settings-button');
+                    const dropdownMenu = document.getElementById('dropdown-menu');
 
                     // Check login status
                     if (localStorage.getItem('isLoggedIn') === 'true') {
-                        // User is logged in
-                        if (loginNavLink) {
-                            loginNavLink.style.display = 'none';
-                        }
                         profileSection.style.display = 'flex';
                         
                         // Logout button functionality
@@ -396,12 +434,15 @@
                             }
                         });
 
+                        // Settings button functionality
+                        settingsButton.addEventListener('click', (event) => {
+                            event.stopPropagation(); // Prevent click from closing menu immediately
+                            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                        });
+
                     } else {
                         // User is not logged in
                         profileSection.style.display = 'none';
-                        if (loginNavLink) {
-                            loginNavLink.style.display = 'block';
-                        }
                     }
 
                     // Search functionality
@@ -441,6 +482,13 @@
                             cardDescription.parentNode.insertBefore(button, cardDescription.nextSibling);
                         }
                     });
+                });
+
+                // Close the dropdown if the user clicks outside of it
+                window.addEventListener('click', (event) => {
+                    if (!event.target.matches('#settings-button') && !event.target.closest('#settings-button')) {
+                        document.getElementById('dropdown-menu').style.display = 'none';
+                    }
                 });
             </script>
 
